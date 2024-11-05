@@ -8,7 +8,7 @@ CREATE TABLE item (
 CREATE TABLE customer (
   customer_id int primary key,
   customer_name varchar(20) not null,
-  customer_address varchar(20) not null,
+  customer_address varchar(20) not null
 );
 
 CREATE TABLE rating (
@@ -17,9 +17,9 @@ CREATE TABLE rating (
   rating_date date not null,
   rating_stars int,
   primary key(item_id, customer_id, rating_date),
-  foreign key(item_id) references item,
-  foreign key(customer_id) references customer,
-  check (rating_stars >= 1 and rating_stars <= 5),
+  foreign key(item_id) references item(item_id),
+  foreign key(customer_id) references customer(item_id),
+  check (rating_stars >= 1 and rating_stars <= 5)
 );
 
 CREATE TABLE invoice (
@@ -28,7 +28,7 @@ CREATE TABLE invoice (
   customer_id int,
   item_quantity int,
   total_cost numeric(12,2),
-  foreign key(item_id) references item,
-  foreign key(customer_id) references customer,
+  foreign key(item_id) references item(item_id),
+  foreign key(customer_id) references customer(customer_id),
   check (item_quantity > 0 and total_cost >= 0.00)
 );
