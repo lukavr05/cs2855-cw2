@@ -19,7 +19,7 @@ CREATE TABLE rating (
   primary key(item_id, customer_id, rating_date),
   foreign key(item_id) references item(item_id),
   foreign key(customer_id) references customer(customer_id),
-  check (rating_stars >= 1 and rating_stars <= 5)
+  check (rating_stars >= 0 and rating_stars <= 5)
 );
 
 CREATE TABLE invoice (
