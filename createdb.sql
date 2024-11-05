@@ -1,3 +1,8 @@
+DROP TABLE IF EXISTS rating;
+DROP TABLE IF EXISTS invoice;
+DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS item;
+
 CREATE TABLE item (
   item_id int primary key,
   item_name varchar(20) not null,
