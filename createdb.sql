@@ -1,7 +1,7 @@
 CREATE TABLE item (
   item_id int primary key,
   item_name varchar(20),
-  item_price float(12,2),
+  item_price numeric(12,2),
   item_manufacturer varchar(20)
 );
 
