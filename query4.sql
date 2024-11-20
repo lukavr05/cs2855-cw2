@@ -22,6 +22,4 @@ WHERE
     )
 GROUP BY 
     c.customer_name, i.item_name
-ORDER BY 
-    c.customer_name, i.item_name;
 
